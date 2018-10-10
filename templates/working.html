@@ -1,1 +1,42 @@
-<h1>YO</h1>
+<!doctype html>
+
+
+<head>
+    <title>TravelWits Test</title>
+    <link rel="stylesheet" href="static/styles.css">
+ 
+</head>
+{% if list_of_flights%}
+<ul>
+    {%for flight in list_of_flights%}
+    <div class="flight-div">
+        <table >
+            <tr>
+                <th>PATH</th>
+                <th>OTHER INFO:</th>
+            </tr>
+            <tr>
+                <td>{{flight.origin }}</td>
+                <td> Departure Time: {{ flight.departuretime}}</td>
+            </tr>
+            <tr>
+                <td>to</td>
+                <td></td>
+            </tr>
+
+            <tr>
+                <td>{{flight.destination}}</td>
+                <td> Arrival Time: {{ flight.arrivaltime}}</td>
+            </tr>
+            </tr>
+
+
+
+        </table>
+
+    </div>
+    
+    {% endfor %}
+{% else %}
+  <h1>NOT WORKING</h1>
+{% endif %}
